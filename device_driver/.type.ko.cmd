@@ -1,1 +1,0 @@
-cmd_/home/koushik/Desktop/koushik/device_driver/type.ko := ld -r -m elf_x86_64 -T /usr/src/linux-headers-3.13.0-44-generic/scripts/module-common.lds --build-id  -o /home/koushik/Desktop/koushik/device_driver/type.ko /home/koushik/Desktop/koushik/device_driver/type.o /home/koushik/Desktop/koushik/device_driver/type.mod.o
