@@ -1,16 +1,26 @@
 %{
-	#include <stdio.h>
-	int picount = 0, nicount = 0, pfcount = 0, nfcount = 0;
+int postiveno=0;
+int negtiveno=0;
+int positivefractions=0;
+int negativefractions=0;
 %}
 
-%%
-[\t\n]+
-[(-0)-(-9)]	{nicount++;}
-[0-9]	{picount++;}
+DIGIT [0-9]
 %%
 
-main(){
-	printf("Enter the text(to end press CTRL + D) : \n");
-	yylex();
-	printf("\nPositive Integers = %d\nNegative Integers = %d\n",picount,nicount);
+\+?{DIGIT}+                             {postiveno++;}
+-{DIGIT}+                             	{negtiveno++;}
+
+\+?{DIGIT}*\.{DIGIT}+            		{positivefractions++;}
+-{DIGIT}*\.{DIGIT}+               		{negativefractions++;}
+%%
+
+main()
+{
+printf("%s\n", "give input follwed by enter (press CTRL + D to stop)"); 
+yylex();
+printf("\nNo. of positive numbers: %d",postiveno);
+printf("\nNo. of Negative numbers: %d",negtiveno);
+printf("\nNo. of Positive fractions: %d",positivefractions);
+printf("\nNo. of Negative fractions: %d\n",negativefractions);
 }
