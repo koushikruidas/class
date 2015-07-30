@@ -5,12 +5,12 @@
 
 %%
 [ ]+		{space++;}
-[.]+		{character++;}
 [a-zA-Z]+|[A-Za-z0-9]*	{
 words++;
 character+= yyleng;}
 [\n]+		{newline++;}
 [\t]+		{space+=4;}
+[.]+		{character++;}
 %%
 
 int main(int argc, char *argv[]){
