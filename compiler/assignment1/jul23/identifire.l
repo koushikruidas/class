@@ -4,7 +4,7 @@
 %}
 
 %%
-^[a-zA-z]*_([a-zA-Z]|[0-9])*$	{count++;}
+[a-zA-z]+[_]*([a-zA-Z]|[0-9])*$	{count++;}
 %%
 main(){
 	printf("Enter the text(to end press CTRL + D) : \n");
