@@ -7,7 +7,7 @@
 ^abb.*ccd$	{
 count++;
 abcount++;}
-(ab)+	{count++;}
+(ab)+	{abcount++;}
 %%
 main(){
 	printf("Enter the text(to end press CTRL + D) : \n");
